@@ -95,6 +95,7 @@ body {
     50% {
         transform: rotate(15deg);
     }
+} /* Closing brace was missing */
 
 @keyframes drift {
     0%, 100% {
@@ -102,7 +103,7 @@ body {
     }
     50% {
         transform: translateX(20px);
-    } 
+    }
 }
 
 .message {
@@ -136,4 +137,28 @@ body {
         width: 70px;
         height: 105px;
     }
+}
+#startButton {
+    padding: 10px 20px;
+    font-size: 1.5em;
+    color: #fff;
+    background-color: #ff99cc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#startButton:hover {
+    background-color: #ff6699;
+}
+
+.countdown-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 5em;
+    color: #fff;
 }

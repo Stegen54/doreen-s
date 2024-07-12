@@ -1,20 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const startButton = document.getElementById('startButton');
     const countdownElement = document.getElementById('countdown');
     const birthdaySong = document.getElementById('birthdaySong');
     let countdown = 3;
 
-    const countdownInterval = setInterval(() => {
-        countdown--;
-        countdownElement.textContent = countdown;
+    startButton.addEventListener('click', function() {
+        startButton.style.display = 'none'; // Hide the button
+        countdownElement.style.display = 'block'; // Show the countdown
 
-        if (countdown === 0) {
-            clearInterval(countdownInterval);
-            document.querySelector('.countdown-container').style.display = 'none';
-            document.getElementById('mainContent').style.display = 'block';
-            birthdaySong.play();
-            launchConfetti();
-        }
-    }, 1000);
+        const countdownInterval = setInterval(() => {
+            countdown--;
+            countdownElement.textContent = countdown;
+
+            if (countdown === 0) {
+                clearInterval(countdownInterval);
+                document.querySelector('.countdown-container').style.display = 'none';
+                document.getElementById('mainContent').style.display = 'block';
+                birthdaySong.play();
+                launchConfetti();
+            }
+        }, 1000);
+    });
 });
 
 function launchConfetti() {
